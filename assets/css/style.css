@@ -164,14 +164,29 @@ main div{
     padding: 30px;
 }
 
+iframe{
+    position: fixed;
+    bottom: 0;;
+    left: 0;
+    z-index: 1;
+}
+
+
 @keyframes blink {
     50% {
-        background-color: #e0e403; 
+        background-color: #e0e4034c; 
     }
 }
 
 .nav-item.active {
     animation: blink 1s infinite;
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
 }
 
 

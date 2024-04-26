@@ -1,44 +1,58 @@
-const charactersContainer = document.getElementById('characters');
-const nextButton = document.getElementById('next');
-const prevButton = document.getElementById('prev');
-let currentPage = 1;
+// Variaveis para as paginas
+const menu = "menu";
+const sinopse = "sinopse";
+const personagens = "personagens";
 
-function getData(page) {
-    const apiUrl = `https://apisimpsons.fly.dev/api/personajes?limit=10&page=${page}`;
-    return fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => data.docs)
-        .catch(error => {
-            console.error('Erro ao obter dados da API:', error);
-            return [];
-        });
+// Função para carregar a página HTML
+function carregarPaginaHTML(pagina) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            document.getElementById('main').innerHTML = this.responseText; // Alterado para 'main' em vez de 'content'
+        }
+    };
+    xhttp.open('GET', pagina, true);
+    xhttp.send();
 }
 
-async function displayCharacters(page) {
-    const characters = await getData(page);
-    charactersContainer.innerHTML = '';
-    characters.forEach(character => {
-        const characterElement = document.createElement('div');
-        characterElement.classList.add('character');
-        characterElement.innerHTML = `
-            <h2>${character.Nombre}</h2>
-            <img style="width: 120px; height: 170px;" src="${character.Imagen}" alt="${character.Imagen}">
-            <p>Estado: ${character.Estado}</p>
-        `;
-        charactersContainer.appendChild(characterElement);
-    });
-}
-
-nextButton.addEventListener('click', () => {
-    currentPage++;
-    displayCharacters(currentPage);
-});
-
-prevButton.addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        displayCharacters(currentPage);
+// Função para carregar a página com base no parâmetro da URL
+function carregarPagina(pagina) {
+    // Carrega a página correspondente com base no parâmetro 'pagina'
+    switch (pagina) {
+        case `${menu}`:
+            carregarPaginaHTML(`${menu}.html`);
+            break;
+        case `${sinopse}`:
+            carregarPaginaHTML(`${sinopse}.html`);
+            break;
+        case `${personagens}`:
+            carregarPaginaHTML(`${personagens}.html`);
+            break;
+        default:
+            carregarPaginaHTML(`${menu}.html`);
     }
+}
+
+// Função para atualizar a URL sem recarregar a página
+function atualizarURL(pagina) {
+    const novaURL = `${window.location.pathname}?pagina=${pagina}`;
+    history.pushState({pagina: pagina}, null, novaURL);
+}
+
+// Adiciona eventos de clique aos links do menu
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Evita o comportamento padrão de carregar a nova página
+
+        const pagina = this.getAttribute('data-pagina');
+        carregarPagina(pagina);
+        atualizarURL(pagina);
+    });
 });
 
-displayCharacters(currentPage);
+// Função para carregar a página ao carregar a página inicial
+window.onload = function() {
+    const parametros = new URLSearchParams(window.location.search);
+    const pagina = parametros.get('pagina');
+    carregarPagina(pagina);
+};
