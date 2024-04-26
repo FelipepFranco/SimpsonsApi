@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>The Simpson</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<video autoplay loop src="assets/img/bart-travel-van-the-simpsons-HD-live-wallpaper.mp4"></video>
+<body>
+    <header>
+        <div class="navbar">
+            <img  id="dohh-image" src="assets/img/dohh!.svg" alt="Dohh!">
+            <ul>
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sinopse.html" class="nav-link">Sinopse</a>
+                </li>
+                <li class="nav-item">
+                    <a href="personagens.html" class="nav-link">Personagens</a>
+                </li>                    
+            </ul>
+            <img src="assets/img/homer_mimir.svg" id="homer-image" alt="Homer Dormindo">
+        </div>
+    </header>
+    <main>
+        <div>
+        </div>
+        <div>
+            <img id="thesimpsons-image" src="assets/img/the simpsons.svg" alt="The Simpsons logo">
+
+            <div class="buttons">
+                <a href="sinopse.html"><button class="actions-buttons">Sinopse</button></a>
+                <a href="personagens.html"><button class="actions-buttons">Personagens</button></a>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
+
+<script>
+    const links = document.querySelectorAll('.nav-item');
+
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
