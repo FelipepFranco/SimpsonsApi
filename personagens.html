@@ -31,20 +31,18 @@
         </div>
     </header>
     <main id="personagens-main">
+        <form id="search-form">
+            <input type="text" name="search" id="searchInput">
+            <button id="searchButton" type="submit"></button>
+        </form>
         <div class="personagens">
-            <h1>Hello, World</h1>
-            <form id="search-form">
-                <input type="text" name="search" id="searchInput" autofocus>
-                <button id="searchButton" type="submit">Buscar</button>
-            </form>
-            <div style="color: black;" id="characters"></div>
-            <div id="sugestoes"></div> <!-- Container para sugestões -->
+            <div style="color: black;" class="characters" id="characters"></div>
+            <div id="sugestoes" class="characters"></div> <!-- Container para sugestões -->
         </div>
-        <div>
+        <div class="buttonscards">
             <button id="prev">Anterior</button>
             <button id="next">Próximo</button>
         </div>
     </main>
     <footer></footer>
 </body>
-</html>

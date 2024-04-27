@@ -131,21 +131,73 @@ main div{
     background: linear-gradient(252deg, rgba(138,152,153,0.0844712885154062) 4%, rgba(155,202,226,0.5690651260504201) 38%, rgba(0,0,0,0.8127626050420168) 49%);
 
 }
-#personagens{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    height: 900px;
-    width: 100%;
-    overflow-y: auto;
-    padding: 10px;
+
+#personagens-main {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.character {
-    border: 1px solid #ccc;
+
+.characters{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+
+input{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+}
+
+#searchButton{
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    background-color: transparent;
+    background-image: url("../img/search roquinha.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+
+.card {
+    width: 300px;
+    height: 370px;
+    margin: 10px;
     padding: 10px;
+    border: none;
+    border-radius: 20px;
     text-align: center;
+    background: linear-gradient(180deg, rgba(137, 32, 141, 0.084) 4%, hsla(300, 46%, 52%, 0.569) 36%, rgba(182, 118, 190, 0.813) 48%);
+    color: #050505;
+}
+.card img {
+    width: 150px;
+    height: 200px;
+}
+
+.buttonscards{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#prev,
+#next {
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #FFD400;
+    cursor: pointer;
 }
 .sinopse{
     width: 100%;
@@ -171,6 +223,19 @@ iframe{
     z-index: 1;
 }
 
+@keyframes cardsanimation {
+    50% {
+        scale: 1.12; 
+    }
+}
+
+.card  h2{
+    margin-top: 50px;
+}
+.card  img{
+    margin-top: 10px;
+    animation: cardsanimation 1s infinite;
+}
 
 @keyframes blink {
     50% {
@@ -182,86 +247,79 @@ iframe{
     animation: blink 1s infinite;
 }
 
-input{
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 25px;
-}
 
 
 /* Media query para Smartphone */
 
 
 
-/* Media query para iPhone XR */
+/* Media query para iPhone 1420px */
 @media only screen and (max-width: 1420px) {
     
     body {
-        background-image: none; /* Remover a imagem de fundo */
-        background-color: #fff; /* Cor de fundo branca */
+        background-position: center;
     }
 
     header {
-        height: 70px; /* Reduzir a altura do cabeçalho */
+        height: 70px; 
     }
 
     .navbar {
-        height: 70px; /* Reduzir a altura da barra de navegação */
+        height: 70px; 
     }
 
     .navbar li {
-        font-size: 1.5rem; /* Reduzir o tamanho da fonte dos itens de navegação */
+        font-size: 1.5rem; 
     }
 
     #homer-image {
-        width: 200px; /* Reduzir o tamanho da imagem do Homer */
-        height: auto; /* Manter a proporção da imagem */
+        width: 200px; 
+        height: auto; 
     }
 
     main {
-        flex-direction: column; /* Mudar a direção do flexbox para coluna */
-        padding: 0 20px; /* Reduzir o espaçamento nas laterais */
+        flex-direction: column; 
+        padding: 0 20px; 
     }
 
     main div {
-        width: 100%; /* Ajustar a largura das divs para ocupar toda a largura */
+        width: 100%; 
     }
 
     #thesimpsons-image {
-        width: 100%; /* Ajustar a largura da imagem dos Simpsons para ocupar toda a largura */
-        height: auto; /* Manter a proporção da imagem */
+        justify-content: flex-end;
+        width: 90%; 
+        height: auto; 
     }
 
     .buttons {
-        width: 100%; /* Ajustar a largura dos botões para ocupar toda a largura */
+        width: 100%; 
     }
 
     .actions-buttons {
-        font-size: 20px; /* Reduzir o tamanho da fonte dos botões */
-        padding: 8px 30px; /* Reduzir o espaçamento interno dos botões */
+        font-size: 20px; 
+        padding: 8px 30px; 
     }
 
     #sinopse-main {
-        width: 100%; /* Ajustar a largura da div da sinopse para ocupar toda a largura */
-        height: 50%; /* Reduzir a altura da div da sinopse */
+        width: 100%; 
+        height: 50%; 
     }
 
-    #personagens {
-        grid-template-columns: repeat(2, 1fr); /* Ajustar o grid para 2 colunas */
-        grid-template-rows: repeat(5, 1fr); /* Ajustar o grid para 5 linhas */
-        height: auto; /* Ajustar a altura automática */
+    #characters {
+        justify-content: center;
+        height: auto; 
     }
 
     .sinopse h2 {
-        font-size: 5rem; /* Reduzir o tamanho da fonte do título da sinopse */
+        font-size: 5rem; 
     }
 
     .sinopse p {
-        padding: 15px; /* Reduzir o espaçamento interno dos parágrafos */
+        padding: 15px; 
     }
 
     input {
-        width: 250px; /* Reduzir a largura do input de busca */
+        width: 250px; 
     }
 }

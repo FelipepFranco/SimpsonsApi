@@ -24,6 +24,16 @@ if (card.Nombre.toLowerCase().includes(input.value.toLowerCase())) {
 criarCards(dadosSearch);
 };
 
+// Adicione um event listener para o input que executa a busca automaticamente
+input.addEventListener('input', async () => {
+    const dados = await getDadosAPI();
+    if (input.value.trim() !== "") {
+        searchCard(dados);
+    } else {
+        criarCards(dados);
+    }
+});
+
 
 const criarCards = function (dadosAPI) {
     while (charactersContainer.firstChild) {
@@ -35,8 +45,6 @@ const criarCards = function (dadosAPI) {
             <div class="card">
                 <img src="${card.Imagen}" alt="${card.Imagen}">
                 <h2>${card.Nombre}</h2>
-                <p>Genero: ${card.Genero}</p>
-                <p>Ocupação: ${card.Ocupacion}</p>
             </div>
         `;
         charactersContainer.innerHTML += cardHTML;
