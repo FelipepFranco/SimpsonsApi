@@ -1,18 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>The Simpson</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/api.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+
+</head>
 
 <body>
+    <header>
+        <div class="navbar">
+            <img id="dohh-image" src="assets/img/dohh!.svg" alt="Dohh!">
+            <ul>
+                <li class="nav-item ">
+                    <a  href="index.html" class="nav-link" data-pagina="menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a  href="sinopse.html" class="nav-link" data-pagina="sinopse">Sinopse</a>
+                </li>
+                <li class="nav-item active">
+                    <a  href="#" class="nav-link" data-pagina="personagens">Personagens</a>
+                </li>
+            </ul>
+            <img src="assets/img/homer_mimir.svg" id="homer-image" alt="Homer Dormindo">
+        </div>
+    </header>
     <main id="personagens-main">
         <div class="personagens">
             <h1>Hello, World</h1>
-            <form action="">
-                <input type="list" name="name" id="input" autofocus>
-                <button type="submit">buscar</button>
+            <form id="search-form">
+                <input type="text" name="search" id="searchInput" autofocus>
+                <button id="searchButton" type="submit">Buscar</button>
             </form>
             <div style="color: black;" id="characters"></div>
+            <div id="sugestoes"></div> <!-- Container para sugestões -->
         </div>
         <div>
-            <button id="next">Próximo</button>
             <button id="prev">Anterior</button>
+            <button id="next">Próximo</button>
         </div>
     </main>
     <footer></footer>
 </body>
+</html>

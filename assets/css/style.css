@@ -190,3 +190,78 @@ input{
 }
 
 
+/* Media query para Smartphone */
+
+
+
+/* Media query para iPhone XR */
+@media only screen and (max-width: 1420px) {
+    
+    body {
+        background-image: none; /* Remover a imagem de fundo */
+        background-color: #fff; /* Cor de fundo branca */
+    }
+
+    header {
+        height: 70px; /* Reduzir a altura do cabeçalho */
+    }
+
+    .navbar {
+        height: 70px; /* Reduzir a altura da barra de navegação */
+    }
+
+    .navbar li {
+        font-size: 1.5rem; /* Reduzir o tamanho da fonte dos itens de navegação */
+    }
+
+    #homer-image {
+        width: 200px; /* Reduzir o tamanho da imagem do Homer */
+        height: auto; /* Manter a proporção da imagem */
+    }
+
+    main {
+        flex-direction: column; /* Mudar a direção do flexbox para coluna */
+        padding: 0 20px; /* Reduzir o espaçamento nas laterais */
+    }
+
+    main div {
+        width: 100%; /* Ajustar a largura das divs para ocupar toda a largura */
+    }
+
+    #thesimpsons-image {
+        width: 100%; /* Ajustar a largura da imagem dos Simpsons para ocupar toda a largura */
+        height: auto; /* Manter a proporção da imagem */
+    }
+
+    .buttons {
+        width: 100%; /* Ajustar a largura dos botões para ocupar toda a largura */
+    }
+
+    .actions-buttons {
+        font-size: 20px; /* Reduzir o tamanho da fonte dos botões */
+        padding: 8px 30px; /* Reduzir o espaçamento interno dos botões */
+    }
+
+    #sinopse-main {
+        width: 100%; /* Ajustar a largura da div da sinopse para ocupar toda a largura */
+        height: 50%; /* Reduzir a altura da div da sinopse */
+    }
+
+    #personagens {
+        grid-template-columns: repeat(2, 1fr); /* Ajustar o grid para 2 colunas */
+        grid-template-rows: repeat(5, 1fr); /* Ajustar o grid para 5 linhas */
+        height: auto; /* Ajustar a altura automática */
+    }
+
+    .sinopse h2 {
+        font-size: 5rem; /* Reduzir o tamanho da fonte do título da sinopse */
+    }
+
+    .sinopse p {
+        padding: 15px; /* Reduzir o espaçamento interno dos parágrafos */
+    }
+
+    input {
+        width: 250px; /* Reduzir a largura do input de busca */
+    }
+}

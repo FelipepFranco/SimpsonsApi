@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/api.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
 
 </head>
 <iframe width="360" height="240" src="https://www.youtube.com/embed/TaINndH-bZ0?si=FkqLRZN1ZW7lkzo7&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -24,10 +25,10 @@
                     <a  href="#" class="nav-link" data-pagina="menu">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a  href="#" class="nav-link" data-pagina="sinopse">Sinopse</a>
+                    <a  href="sinopse.html" class="nav-link" data-pagina="sinopse">Sinopse</a>
                 </li>
                 <li class="nav-item">
-                    <a  href="#" class="nav-link" data-pagina="personagens">Personagens</a>
+                    <a  href="personagens.html" class="nav-link" data-pagina="personagens">Personagens</a>
                 </li>
             </ul>
             <img src="assets/img/homer_mimir.svg" id="homer-image" alt="Homer Dormindo">
@@ -35,19 +36,19 @@
     </header>
     
     <main id="main">
+        <div>
+        </div>
+        <div>
+            <img id="thesimpsons-image" src="assets/img/the simpsons.svg" alt="The Simpsons logo">
 
+            <div class="buttons">
+                <a href="sinopse.html"><button class="actions-buttons" data-pagina="sinopse">Sinopse</button></a>
+                <a  href="personagens.html"><button class="actions-buttons" data-pagina="personagens">Personagens</button></a>
+            </div>
+        </div>
     </main>
 
 
 </body>
 
-<script>
-    const links = document.querySelectorAll('.nav-item');
-
-    links.forEach(link => {
-        link.addEventListener('click', function() {
-            links.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-</script>
+</html>

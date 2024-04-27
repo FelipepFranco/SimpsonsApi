@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="assets/js/main.js" defer></script>
+    <!-- <script src="assets/js/main.js" defer></script> -->
+    <!-- <script src="assets/js/search.js" defer></script> -->
 </head>
 
 <body>
@@ -12,8 +13,8 @@
         <div class="personagens">
             <h1>Hello, World</h1>
             <form id="search-form">
-                <input type="text" name="search" id="input" autofocus>
-                <button type="submit">Buscar</button>
+                <input type="text" name="search" id="searchInput" autofocus>
+                <button id="searchButton" type="submit">Buscar</button>
             </form>
             <div style="color: black;" id="characters"></div>
             <div id="sugestoes"></div> <!-- Container para sugestões -->
@@ -24,93 +25,9 @@
         </div>
     </main>
     <footer></footer>
+
+    <script>
+
+    </script>
 </body>
-
 </html>
-
-<script>
-const charactersContainer = document.getElementById('characters');
-const nextButton = document.getElementById('next');
-const prevButton = document.getElementById('prev');
-let currentPage = 1;
-
-function getData(page) {
-    const apiUrl = `https://apisimpsons.fly.dev/api/personajes?limit=10&page=${page}`;
-    return fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => data.docs)
-        .catch(error => {
-            console.error('Erro ao obter dados da API:', error);
-            return [];
-        });
-}
-
-async function displayCharacters(page) {
-    const characters = await getData(page);
-    charactersContainer.innerHTML = '';
-    characters.forEach(character => {
-        const characterElement = document.createElement('div');
-        characterElement.classList.add('character');
-        characterElement.innerHTML = `
-            <h2>${character.Nombre}</h2>
-            <img style="width: 120px; height: 170px;" src="${character.Imagen}" alt="${character.Imagen}">
-            <p>Estado: ${character.Estado}</p>
-        `;
-        charactersContainer.appendChild(characterElement);
-    });
-}
-
-nextButton.addEventListener('click', () => {
-    currentPage++;
-    displayCharacters(currentPage);
-});
-
-prevButton.addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        displayCharacters(currentPage);
-    }
-});
-
-displayCharacters(currentPage);
-
-const searchForm = document.getElementById('search-form');
-const input = document.getElementById('input');
-
-searchForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const query = input.value.trim();
-    if (query.length >= 3) {
-        const relatedCharacters = await getRelatedCharacters(query);
-        displayRelatedCharacters(relatedCharacters);
-    } else {
-        displayCharacters(currentPage);
-    }
-});
-
-async function getRelatedCharacters(query) {
-    const apiUrl = `https://apisimpsons.fly.dev/api/personajes?q=${query}`;
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        return data.docs;
-    } catch (error) {
-        console.error('Erro ao obter personagens relacionados da API:', error);
-        return [];
-    }
-}
-
-function displayRelatedCharacters(characters) {
-    charactersContainer.innerHTML = '';
-    characters.forEach(character => {
-        const characterElement = document.createElement('div');
-        characterElement.classList.add('character');
-        characterElement.innerHTML = `
-            <h2>${character.Nombre}</h2>
-            <img style="width: 120px; height: 170px;" src="${character.Imagen}" alt="${character.Imagen}">
-            <p>Estado: ${character.Estado}</p>
-        `;
-        charactersContainer.appendChild(characterElement);
-    });
-}
-</script>
