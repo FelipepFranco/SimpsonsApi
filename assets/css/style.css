@@ -258,10 +258,23 @@ input{
 
 iframe{
     position: fixed;
-    bottom: 0;;
+    bottom: 40px;
     left: 0;
     z-index: 1;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(45deg, rgb(165, 234, 243), transparent, rgb(192, 10, 10));
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
 
 /* Estilo para a modal */
 /* Estilo para a modal */

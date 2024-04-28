@@ -1,4 +1,4 @@
-
+// CONFIGURAÇÕES DA PAGINA
     const links = document.querySelectorAll('.nav-item');
 
     links.forEach(link => {
