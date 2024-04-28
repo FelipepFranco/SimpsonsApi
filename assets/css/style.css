@@ -1,7 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/homer-simpson-revised');
+
 *{
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+    font-family: 'Homer Simpson Revised', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -44,6 +47,7 @@ header {
 }
 
 .navbar {
+    font-weight: 700;
     width: 100%;
     height: 100%;
     display: flex;
@@ -66,11 +70,18 @@ header {
     font-size: 2rem;
 }
 .navbar li a {
+    font-size: 30px;
     text-decoration: none;
     font-size: 3rem;
-
     color: white;
+    transition: color 0.3s, transform 0.3s;
 }
+
+.navbar li a:hover {
+    color: #e6e0c2; 
+    transform: scale(1.1); 
+}
+
 
 .navbar li:last-child {
     margin-right: 0;
@@ -110,8 +121,7 @@ main div{
 }
 
 .actions-buttons{
-    
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 900;
     display: inline-block;
     padding: 10px 35px;
@@ -121,17 +131,27 @@ main div{
     outline: none;
     cursor: pointer;
     clip-path: polygon(15% 0, 100% 0, 80% 100%,  0 100%);
+    transition: clip-path 0.3s, background-color 0.3s;
+}
+
+.actions-buttons:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background-color: #ED3133;
+    color:#FFD400 ;
 }
 
 #sinopse-main{
     width: 90%;
     height:70%;
     padding: 10px;
+    letter-spacing: 2px;
     /* background-color: aliceblue; */
     background: linear-gradient(252deg, rgba(138,152,153,0.0844712885154062) 4%, rgba(155,202,226,0.5690651260504201) 38%, rgba(0,0,0,0.8127626050420168) 49%);
 
 }
-
+#family-image{
+    width: 700px;
+}
 #personagens-main {
     width: 75%;
     height: 80%;
@@ -223,21 +243,22 @@ input{
 }
 #prev,
 #next {
+    font-weight: 700;
+    font-size: 20px;
     margin-top: 10px;
-    font-weight: 400;
     width: 200px;
     height: 40px;
     border-radius: 15px;
     background-color: #FFD400;
     border: none;
     cursor: pointer;
+    letter-spacing: 2px;
 }
 
 #prev:hover,
 #next:hover{
     background-color: #e7b221;
     scale: 1.2;
-
 }
 .sinopse{
     width: 100%;
@@ -264,9 +285,13 @@ iframe{
 }
 
 footer {
+    align-self: center;
+    font-size: 25px;
+    font-weight: 700;
     position: fixed;
     bottom: 0;
     left: 0;
+    height:40px ;
     width: 100%;
     background: linear-gradient(45deg, rgb(165, 234, 243), transparent, rgb(192, 10, 10));
     color: #fff;
@@ -292,7 +317,8 @@ footer {
 
 
 .modal-content {
-    background: linear-gradient(75deg, rgba(246,239,90,1) 5%, rgba(168,177,117,1) 46%, rgba(225,235,171,1) 98%);
+    /* background: linear-gradient(75deg, rgba(246,239,90,1) 5%, rgba(168,177,117,1) 46%, rgba(225,235,171,1) 98%); */
+    background: linear-gradient(75deg, rgb(224, 218, 102) 5%, rgb(222, 231, 173) 46%, rgb(198, 209, 137) 98%);
     margin: 15% auto; 
     border: none;
     width: 50%; 
@@ -312,6 +338,7 @@ footer {
     float: left;
 }
 .info-modal {
+    font-size: 25px;
     padding: 20px;
     height: 300px;
     display: flex;
