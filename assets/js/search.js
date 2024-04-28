@@ -1,5 +1,9 @@
-
-
+//  Funcionamento do Filtro
+//  chamanda da Api "apisimpsons.fly.dev"
+//  Pecorrer a APi Exbir na tela de personagens Porem 
+// de acordo com o que pesquisado no campo do inut
+// 
+// 
 const searchForm = document.getElementById('search-form');
 const input = document.getElementById('searchInput'); // Corrigido o ID
 

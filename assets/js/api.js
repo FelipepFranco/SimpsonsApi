@@ -1,3 +1,8 @@
+//  chamada da Api "apisimpsons.fly.dev"
+//  Pecorrer a APi Exbir na tela de personagens 
+// 
+// 
+// 
 const charactersContainer = document.getElementById('characters');
 const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
