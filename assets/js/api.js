@@ -45,8 +45,8 @@ function openModal(character) {
         </div>
         <div class="info-modal">
         <h2>${character.Nombre}</h2>
-        <p><strong>Genero:</strong> ${character.Genero}</p>
-        <p><strong>Ocupación:</strong> ${character.Ocupacion}</p>
+        <p><strong>Gênero:</strong> ${character.Genero}</p>
+        <p><strong>Ocupação:</strong> ${character.Ocupacion}</p>
         <p><strong>História:</strong> ${character.Historia}</p>
         </div>
     `;
