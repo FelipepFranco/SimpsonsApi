@@ -133,11 +133,26 @@ main div{
 }
 
 #personagens-main {
-    width: 90%;
-    height: 70%;
+    width: 75%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.personagens {
+    width: 100%;
+    overflow-y: auto;
+}
+
+.personagens::-webkit-scrollbar {
+    width: 8px; 
+    background-color: transparent;
+}
+
+.personagens::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.356); 
+    border-radius: 4px; 
 }
 
 
@@ -146,11 +161,15 @@ main div{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
-    justify-content: center;
+    justify-content: center;    
 }
 
+form{
+ margin: 15px 0 15px 0;
+}
 
 input{
+    padding: 10px;
     width: 300px;
     height: 30px;
     border: none;
@@ -171,19 +190,30 @@ input{
 
 
 .card {
-    width: 300px;
-    height: 370px;
-    margin: 10px;
+    overflow: hidden;
+    font-size: 18px;
+    width: 255px;
+    height: 300px;
     padding: 10px;
     border: none;
     border-radius: 20px;
     text-align: center;
-    background: linear-gradient(180deg, rgba(137, 32, 141, 0.084) 4%, hsla(300, 46%, 52%, 0.569) 36%, rgba(182, 118, 190, 0.813) 48%);
-    color: #050505;
+    background: linear-gradient(180deg, hsla(0, 35%, 87%, 0.664) 10%, hsla(0, 6%, 88%, 0.623) 40%, hwb(0 88% 8%) 48%);
+    color: #000;
 }
+
+.card:hover {
+    /* Gradiente linear com uma cor branca para simular o feixe de luz */
+    background: linear-gradient(45deg, rgba(133, 139, 40, 0.8), transparent, rgba(192, 10, 10, 0.8));
+    animation-play-state: paused;
+    color: #fff;
+    cursor: pointer;
+}
+
+
 .card img {
-    width: 150px;
-    height: 200px;
+    width: 115px;
+    height: 165px;
 }
 
 .buttonscards{
@@ -193,11 +223,21 @@ input{
 }
 #prev,
 #next {
+    margin-top: 10px;
+    font-weight: 400;
     width: 200px;
     height: 40px;
     border-radius: 15px;
     background-color: #FFD400;
+    border: none;
     cursor: pointer;
+}
+
+#prev:hover,
+#next:hover{
+    background-color: #e7b221;
+    scale: 1.2;
+
 }
 .sinopse{
     width: 100%;
@@ -222,6 +262,76 @@ iframe{
     left: 0;
     z-index: 1;
 }
+
+/* Estilo para a modal */
+/* Estilo para a modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+.modal-content {
+    background: linear-gradient(75deg, rgba(246,239,90,1) 5%, rgba(168,177,117,1) 46%, rgba(225,235,171,1) 98%);
+    margin: 15% auto; 
+    border: none;
+    width: 50%; 
+    height: 50%;
+}
+
+.modal-characters {
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza as divs filhas horizontalmente */
+    align-items: center; /* Centraliza as divs filhas verticalmente */
+}
+
+.img-modal {
+    padding: 20px;
+    width: 30%;
+    float: left;
+}
+.info-modal {
+    padding: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    float: right;
+    width: 70%;
+    text-align: center; /* Alinha o conteúdo das divs filhas ao centro */
+    word-spacing: 2px;
+}
+
+ 
+
+.close {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #ED3133;
+}
+
 
 @keyframes cardsanimation {
     50% {
@@ -253,73 +363,115 @@ iframe{
 
 
 
-/* Media query para iPhone 1420px */
-@media only screen and (max-width: 1420px) {
+/* Media query para telas de  1420px */
+@media only screen and (max-width: 1440px) {
     
     body {
-        background-position: center;
+        background-size: auto; /* Ajusta o tamanho do plano de fundo para a tela */
     }
 
-    header {
-        height: 70px; 
-    }
-
-    .navbar {
-        height: 70px; 
-    }
-
-    .navbar li {
-        font-size: 1.5rem; 
-    }
-
-    #homer-image {
-        width: 200px; 
-        height: auto; 
+    .modal-content {
+        width: 60%; /* Ajusta a largura da modal para ocupar 60% da tela */
+        height: 70%; /* Ajusta a altura da modal para ocupar 70% da tela */
+        margin: 10% auto; /* Ajusta a margem da modal */
     }
 
     main {
-        flex-direction: column; 
-        padding: 0 20px; 
+        padding: 0 80px; /* Ajusta o espaçamento lateral do conteúdo principal */
     }
 
-    main div {
-        width: 100%; 
+    .card {
+        width: 350px; /* Ajusta a largura dos cards */
+        height: 400px; /* Ajusta a altura dos cards */
+        font-size: 20px; /* Ajusta o tamanho da fonte dos cards */
+    }
+
+    .characters {
+        grid-template-columns: repeat(5, 1fr); /* Altera para 5 colunas */
+    }
+
+    .img-modal {
+        width: 40%; /* Ajusta a largura da imagem na modal */
+    }
+
+    .info-modal {
+        width: 60%; /* Ajusta a largura das informações na modal */
     }
 
     #thesimpsons-image {
-        justify-content: flex-end;
-        width: 90%; 
-        height: auto; 
+        width: 800px; /* Ajusta a largura da imagem dos Simpsons */
     }
 
-    .buttons {
-        width: 100%; 
-    }
-
-    .actions-buttons {
-        font-size: 20px; 
-        padding: 8px 30px; 
+    #personagens-main {
+        height: 90%; /* Ajusta a altura do contêiner principal dos personagens */
     }
 
     #sinopse-main {
-        width: 100%; 
-        height: 50%; 
-    }
-
-    #characters {
-        justify-content: center;
-        height: auto; 
+        width: 80%; /* Ajusta a largura do contêiner da sinopse */
     }
 
     .sinopse h2 {
-        font-size: 5rem; 
+        font-size: 8rem; /* Ajusta o tamanho da fonte do título da sinopse */
     }
 
-    .sinopse p {
-        padding: 15px; 
+    .actions-buttons {
+        font-size: 30px; /* Ajusta o tamanho da fonte dos botões */
+    }
+}
+
+
+
+
+@media only screen and (max-width: 414px) {
+    body {
+        background-size: auto; /* Ajusta o tamanho do plano de fundo para a tela */
     }
 
-    input {
-        width: 250px; 
+    .modal-content {
+        width: 70%; /* Ajusta a largura da modal para ocupar 70% da tela */
+        height: 70%; /* Ajusta a altura da modal para ocupar 70% da tela */
+        margin: 10% auto; /* Ajusta a margem da modal */
+    }
+
+    main {
+        padding: 0 60px; /* Ajusta o espaçamento lateral do conteúdo principal */
+    }
+
+    .card {
+        width: 320px; /* Ajusta a largura dos cards */
+        height: 370px; /* Ajusta a altura dos cards */
+        font-size: 18px; /* Ajusta o tamanho da fonte dos cards */
+    }
+
+    .characters {
+        grid-template-columns: repeat(4, 1fr); /* Mantém 4 colunas */
+    }
+
+    .img-modal {
+        width: 40%; /* Ajusta a largura da imagem na modal */
+    }
+
+    .info-modal {
+        width: 60%; /* Ajusta a largura das informações na modal */
+    }
+
+    #thesimpsons-image {
+        width: 600px; /* Ajusta a largura da imagem dos Simpsons */
+    }
+
+    #personagens-main {
+        height: 80%; /* Ajusta a altura do contêiner principal dos personagens */
+    }
+
+    #sinopse-main {
+        width: 90%; /* Ajusta a largura do contêiner da sinopse */
+    }
+
+    .sinopse h2 {
+        font-size: 6rem; /* Ajusta o tamanho da fonte do título da sinopse */
+    }
+
+    .actions-buttons {
+        font-size: 25px; /* Ajusta o tamanho da fonte dos botões */
     }
 }

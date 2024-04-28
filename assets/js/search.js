@@ -47,7 +47,12 @@ const criarCards = function (dadosAPI) {
                 <h2>${card.Nombre}</h2>
             </div>
         `;
-        charactersContainer.innerHTML += cardHTML;
+        const cardElement = document.createElement('div');
+        cardElement.innerHTML = cardHTML;
+        cardElement.addEventListener('click', () => {
+            openModal(card);
+        });
+        charactersContainer.appendChild(cardElement);
     });
 };
 
