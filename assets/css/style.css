@@ -154,13 +154,14 @@ main div{
 }
 #personagens-main {
     width: 75%;
-    height: 80%;
+    height: 83%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .personagens {
+    padding: 20px;
     width: 100%;
     overflow-y: auto;
 }
@@ -220,7 +221,8 @@ input{
     text-align: center;
     background: linear-gradient(180deg, hsla(0, 35%, 87%, 0.664) 10%, hsla(0, 6%, 88%, 0.623) 40%, hwb(0 88% 8%) 48%);
     color: #000;
-}
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    }
 
 .card:hover {
     /* Gradiente linear com uma cor branca para simular o feixe de luz */
@@ -407,55 +409,55 @@ footer {
 @media only screen and (max-width: 1440px) {
     
     body {
-        background-size: auto; /* Ajusta o tamanho do plano de fundo para a tela */
+        background-size: auto; 
     }
 
     .modal-content {
-        width: 60%; /* Ajusta a largura da modal para ocupar 60% da tela */
-        height: 70%; /* Ajusta a altura da modal para ocupar 70% da tela */
-        margin: 10% auto; /* Ajusta a margem da modal */
+        width: 60%;
+        height: 70%; 
+        margin: 10% auto; 
     }
 
     main {
-        padding: 0 80px; /* Ajusta o espaçamento lateral do conteúdo principal */
+        padding: 0 80px; 
     }
 
     .card {
-        width: 350px; /* Ajusta a largura dos cards */
-        height: 400px; /* Ajusta a altura dos cards */
-        font-size: 20px; /* Ajusta o tamanho da fonte dos cards */
+        width: 350px; 
+        height: 400px;
+        font-size: 20px;
     }
 
     .characters {
-        grid-template-columns: repeat(5, 1fr); /* Altera para 5 colunas */
+        grid-template-columns: repeat(5, 1fr); 
     }
 
     .img-modal {
-        width: 40%; /* Ajusta a largura da imagem na modal */
+        width: 40%; 
     }
 
     .info-modal {
-        width: 60%; /* Ajusta a largura das informações na modal */
+        width: 60%; 
     }
 
     #thesimpsons-image {
-        width: 800px; /* Ajusta a largura da imagem dos Simpsons */
+        width: 800px;
     }
 
     #personagens-main {
-        height: 90%; /* Ajusta a altura do contêiner principal dos personagens */
+        height: 90%; 
     }
 
     #sinopse-main {
-        width: 80%; /* Ajusta a largura do contêiner da sinopse */
+        width: 80%; 
     }
 
     .sinopse h2 {
-        font-size: 8rem; /* Ajusta o tamanho da fonte do título da sinopse */
+        font-size: 8rem;
     }
 
     .actions-buttons {
-        font-size: 30px; /* Ajusta o tamanho da fonte dos botões */
+        font-size: 30px; 
     }
 }
 
@@ -464,54 +466,54 @@ footer {
 
 @media only screen and (max-width: 414px) {
     body {
-        background-size: auto; /* Ajusta o tamanho do plano de fundo para a tela */
+        background-size: auto; 
     }
 
     .modal-content {
-        width: 70%; /* Ajusta a largura da modal para ocupar 70% da tela */
-        height: 70%; /* Ajusta a altura da modal para ocupar 70% da tela */
-        margin: 10% auto; /* Ajusta a margem da modal */
+        width: 70%; 
+        height: 70%; 
+        margin: 10% auto;
     }
 
     main {
-        padding: 0 60px; /* Ajusta o espaçamento lateral do conteúdo principal */
+        padding: 0 60px;
     }
 
     .card {
-        width: 320px; /* Ajusta a largura dos cards */
-        height: 370px; /* Ajusta a altura dos cards */
-        font-size: 18px; /* Ajusta o tamanho da fonte dos cards */
+        width: 320px; 
+        height: 370px; 
+        font-size: 18px; 
     }
 
     .characters {
-        grid-template-columns: repeat(4, 1fr); /* Mantém 4 colunas */
+        grid-template-columns: repeat(4, 1fr); 
     }
 
     .img-modal {
-        width: 40%; /* Ajusta a largura da imagem na modal */
+        width: 40%;
     }
 
     .info-modal {
-        width: 60%; /* Ajusta a largura das informações na modal */
+        width: 60%;
     }
 
     #thesimpsons-image {
-        width: 600px; /* Ajusta a largura da imagem dos Simpsons */
+        width: 600px; 
     }
 
     #personagens-main {
-        height: 80%; /* Ajusta a altura do contêiner principal dos personagens */
+        height: 80%; 
     }
 
     #sinopse-main {
-        width: 90%; /* Ajusta a largura do contêiner da sinopse */
+        width: 90%; 
     }
 
     .sinopse h2 {
-        font-size: 6rem; /* Ajusta o tamanho da fonte do título da sinopse */
+        font-size: 6rem; 
     }
 
     .actions-buttons {
-        font-size: 25px; /* Ajusta o tamanho da fonte dos botões */
+        font-size: 25px;
     }
 }
