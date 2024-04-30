@@ -40,7 +40,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 90px;
+    height: 5.625rem;
     background: linear-gradient(90deg, rgba(0,0,0,0.0844712885154062) 0%, rgba(146,212,247,0.5690651260504201) 55%);
 
     z-index: 999;
@@ -62,15 +62,15 @@ header {
     display: flex;
     list-style-type: none; 
     padding: 0;
-    gap: 50px;
+    gap: 3.125rem;
 }
 
 .navbar li {
-    margin-right: 20px;
+    margin-right: 1.25rem;
     font-size: 2rem;
 }
 .navbar li a {
-    font-size: 30px;
+    font-size: 1.875rem;
     text-decoration: none;
     font-size: 3rem;
     color: white;
@@ -89,19 +89,19 @@ header {
 
 #homer-image {
     justify-content: flex-end;
-    margin-top: 61px;
+    margin-top: 3.8125em;
     margin-right: 10px;
-    width: 273px;
-    height: 150px;
+    width: 17.0625em;
+    height: 9.375em;
 }
 #dohh-image {
-    width: 152px;
-    height: 102px;
+    width: 9.5rem;
+    height: 6.375rem;
 }
 main{
     width: 100%;
     height: 100%;
-    padding: 0 40px;
+    padding: 0 2.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -113,7 +113,7 @@ main div{
 }
 
 #thesimpsons-image{
-    width: 700px;
+    width: 43.75rem;
 }
 
 .buttons{
@@ -121,10 +121,10 @@ main div{
 }
 
 .actions-buttons{
-    font-size: 30px;
+    font-size: 1.785rem;
     font-weight: 900;
     display: inline-block;
-    padding: 10px 35px;
+    padding: 0.625rem 4.0625rem;
     color: #ED3133;
     background-color: #FFD400;
     border: none;
@@ -143,14 +143,14 @@ main div{
 #sinopse-main{
     width: 90%;
     height:70%;
-    padding: 10px;
+    padding: 0.625rem;
     letter-spacing: 2px;
     /* background-color: aliceblue; */
     background: linear-gradient(252deg, rgba(138,152,153,0.0844712885154062) 4%, rgba(155,202,226,0.5690651260504201) 38%, rgba(0,0,0,0.8127626050420168) 49%);
 
 }
 #family-image{
-    width: 700px;
+    width: 43.75rem;
 }
 #personagens-main {
     width: 75%;
@@ -161,7 +161,7 @@ main div{
 }
 
 .personagens {
-    padding: 20px;
+    padding: 1.25rem;
     width: 100%;
     overflow-y: auto;
 }
@@ -181,7 +181,7 @@ main div{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 0.625rem;
     justify-content: center;    
 }
 
@@ -212,10 +212,10 @@ input{
 
 .card {
     overflow: hidden;
-    font-size: 18px;
-    width: 255px;
-    height: 300px;
-    padding: 10px;
+    font-size: 1.125rem;
+    width: 15.9375rem;
+    height: 18.75rem;
+    padding: 0.625rem;
     border: none;
     border-radius: 20px;
     text-align: center;
@@ -234,8 +234,8 @@ input{
 
 
 .card img {
-    width: 115px;
-    height: 165px;
+    width: 7.1875rem;
+    height: 10.3125rem;
 }
 
 .buttonscards{
@@ -281,19 +281,18 @@ input{
 
 iframe{
     position: fixed;
-    bottom: 40px;
     left: 0;
     z-index: 1;
 }
 
 footer {
     align-self: center;
-    font-size: 25px;
+    font-size: 1.5625rem;
     font-weight: 700;
     position: fixed;
     bottom: 0;
     left: 0;
-    height:40px ;
+    height:2.5rem ;
     width: 100%;
     background: linear-gradient(45deg, rgb(165, 234, 243), transparent, rgb(192, 10, 10));
     color: #fff;
@@ -319,7 +318,7 @@ footer {
 
 
 .modal-content {
-    /* background: linear-gradient(75deg, rgba(246,239,90,1) 5%, rgba(168,177,117,1) 46%, rgba(225,235,171,1) 98%); */
+
     background: linear-gradient(75deg, rgb(224, 218, 102) 5%, rgb(222, 231, 173) 46%, rgb(198, 209, 137) 98%);
     margin: 15% auto; 
     border: none;
@@ -330,8 +329,8 @@ footer {
 .modal-characters {
     height: 100%;
     display: flex;
-    justify-content: center; /* Centraliza as divs filhas horizontalmente */
-    align-items: center; /* Centraliza as divs filhas verticalmente */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .img-modal {
@@ -342,7 +341,7 @@ footer {
 .info-modal {
     font-size: 25px;
     padding: 20px;
-    height: 300px;
+    height: 18.75rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -350,7 +349,7 @@ footer {
     gap: 25px;
     float: right;
     width: 70%;
-    text-align: center; /* Alinha o conteúdo das divs filhas ao centro */
+    text-align: center; 
     word-spacing: 2px;
 }
 
@@ -401,35 +400,50 @@ footer {
 
 
 
-/* Media query para Smartphone */
-
-
 
 /* Media query para telas de  1420px */
 @media only screen and (max-width: 1440px) {
     
     body {
-        background-size: auto; 
+        background-size: cover; 
+        background-position: center;
+    }
+    .thesimpsons-main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .div_none{
+        display: none;
     }
 
-    .modal-content {
-        width: 60%;
-        height: 70%; 
-        margin: 10% auto; 
+    .sinopse p{
+        font-size: 25px;
     }
+
+    
 
     main {
         padding: 0 80px; 
     }
 
     .card {
-        width: 350px; 
-        height: 400px;
+        width: 250px; 
+        height: 300px;
         font-size: 20px;
     }
 
     .characters {
-        grid-template-columns: repeat(5, 1fr); 
+        
+        grid-template-columns: repeat(4, 1fr); 
     }
 
     .img-modal {
@@ -441,19 +455,29 @@ footer {
     }
 
     #thesimpsons-image {
-        width: 800px;
+        width: 43.75rem;
     }
 
     #personagens-main {
-        height: 90%; 
+        height: 90%;
+        width: 100%;
     }
 
     #sinopse-main {
         width: 80%; 
     }
+    #family-image{
+        width: 700px;
+        height: 400px;
+    }
 
     .sinopse h2 {
         font-size: 8rem;
+    }
+
+    #search-form{
+        margin-top: 40px;
+        margin-bottom:-10px ;
     }
 
     .actions-buttons {
@@ -462,58 +486,134 @@ footer {
 }
 
 
+@media only screen and (max-width: 1233px) {
+    body{
+        min-width: 1020px;
+    }
+    #personagens-main {
+        height: 80%; 
+    }
+    .personagens{
+        width: 100%;
+    }
+    .card {
+        width: 260px; 
+        height: 320px; 
+        font-size: 14px; 
+    }
+    .characters {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .sinopse p{
+        font-size: 20px;
+    }
+
+    #family-image{
+        margin-left: -150px;
+        height: 400px;
+    }
+    #search-form{
+        margin-top: 10px;
+        margin-bottom:10px ;
+    }
 
 
-@media only screen and (max-width: 414px) {
+}
+
+
+ @media only screen and (max-width: 414px) {
     body {
-        background-size: auto; 
+        background-size: cover; 
+        background-position: center;
+        min-width: 315px;
+    }
+    #dohh-image{
+        display: none;
+    }
+    #homer-image{
+        display: none;
+    }
+    #myModal{
+        padding: 10% auto;
+    }
+    .navbar li a {
+        font-size: 24px;
+        padding: 10px;
     }
 
     .modal-content {
-        width: 70%; 
-        height: 70%; 
-        margin: 10% auto;
+        margin-top: 100px;
+        width: 100%;
+        height: 90%; 
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    #modal-characters{
+       display: flex;
+       flex-direction: column-reverse;
     }
 
     main {
-        padding: 0 60px;
+        padding: 0;
+    }
+    .thesimpsons-main{
+        align-items: self-start;
+        justify-content: flex-start;
+        gap: 160px;
+        height: 700px;
     }
 
     .card {
-        width: 320px; 
-        height: 370px; 
+        width: 300px; 
+        height: 350px; 
         font-size: 18px; 
     }
 
     .characters {
-        grid-template-columns: repeat(4, 1fr); 
+        grid-template-columns: repeat(1, 1fr); 
     }
 
     .img-modal {
-        width: 40%;
+        width: 0%;
+        height: 40%;
+        text-align: end;
     }
-
+    
     .info-modal {
-        width: 60%;
+        height: 50%;
+        width: 100%;
     }
 
     #thesimpsons-image {
-        width: 600px; 
+        width: 410px; 
     }
 
     #personagens-main {
-        height: 80%; 
+        width: 100%;
+        height: 73%; 
     }
 
     #sinopse-main {
-        width: 90%; 
+        background: linear-gradient(0deg, rgba(138,152,153,0.0844712885154062) 4%, rgba(155,202,226,0.5690651260504201) 28%, rgba(0,0,0,0.8127626050420168) 60%);
+        flex-direction: column-reverse;
+        width: 95%; 
     }
 
     .sinopse h2 {
         font-size: 6rem; 
+        margin-top: -43px;
+        margin-bottom: -30px;
+    }
+    #family-image{
+        height: 150px;
     }
 
     .actions-buttons {
         font-size: 25px;
+    }
+    iframe{
+        bottom: 40px;
+        height: 200px;
     }
 }
